@@ -19,6 +19,7 @@
 
 
 - (IBAction)openMapView;
+- (IBAction)openListView;
 
 - (IBAction)doRedButton;
 - (IBAction)doGreenButton;

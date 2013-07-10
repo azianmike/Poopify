@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10ED719178D17A100C7D55F /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10ED718178D17A100C7D55F /* ListViewController.m */; };
 		C1278404178BB8B1009FE27E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278403178BB8B1009FE27E /* UIKit.framework */; };
 		C1278406178BB8B2009FE27E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278405178BB8B2009FE27E /* Foundation.framework */; };
 		C1278408178BB8B2009FE27E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278407178BB8B2009FE27E /* CoreGraphics.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C10ED717178D17A100C7D55F /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		C10ED718178D17A100C7D55F /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		C1278400178BB8B1009FE27E /* Poopify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poopify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1278403178BB8B1009FE27E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C1278405178BB8B2009FE27E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,6 +142,8 @@
 				C1FE6DA1178D0C9F0043724A /* MapViewController.m */,
 				C1278424178BB8B2009FE27E /* FlipsideViewController.h */,
 				C1278425178BB8B2009FE27E /* FlipsideViewController.m */,
+				C10ED717178D17A100C7D55F /* ListViewController.h */,
+				C10ED718178D17A100C7D55F /* ListViewController.m */,
 				C127840A178BB8B2009FE27E /* Supporting Files */,
 			);
 			path = Poopify;
@@ -293,6 +298,7 @@
 				C1278426178BB8B2009FE27E /* FlipsideViewController.m in Sources */,
 				C1FE6D9F178CF7AC0043724A /* AppDelegate.m in Sources */,
 				C1FE6DA2178D0C9F0043724A /* MapViewController.m in Sources */,
+				C10ED719178D17A100C7D55F /* ListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

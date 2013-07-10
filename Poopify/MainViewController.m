@@ -100,6 +100,16 @@
     
 }
 
+- (IBAction)openListView {
+    
+    //MapViewController *oView = [[MapViewController alloc]         initWithNibName:NSStringFromClass([MapViewController class])  bundle:nil];
+    
+    //oView.title = @"The Other View";
+    //[self.navigationController pushViewController:oView animated:YES];
+    
+    [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    
+}
 
 
 
