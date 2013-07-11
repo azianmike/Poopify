@@ -25,14 +25,81 @@
 
 - (void)viewDidLoad
 {
+    //[self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewDidLoad];
+    [self setUpView];
 	// Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+}
+
+- (IBAction)openMapView {
+    
+    //MapViewController *oView = [[MapViewController alloc]         initWithNibName:NSStringFromClass([MapViewController class])  bundle:nil];
+    
+    //oView.title = @"The Other View";
+    //[self.navigationController pushViewController:oView animated:YES];
+    
+    [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    
+}
+
+-(void)setUpView{
+    view1 = [[UIView alloc]initWithFrame:self.view.frame];
+    view1.backgroundColor = [UIColor lightTextColor];
+    view2 = [[UIView alloc]initWithFrame:self.view.frame];
+    view2.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:view1];
+    [self.view sendSubviewToBack:view1];
+    
+}
+
+-(void)doTransitionWithType:(UIViewAnimationTransition)animationTransitionType{
+    if ([[self.view subviews] containsObject:view2 ]) {
+        [UIView transitionFromView:view2
+                            toView:view1
+                          duration:2
+                           options:animationTransitionType
+                        completion:^(BOOL finished){
+                            [view2 removeFromSuperview];
+                        }];
+        [self.view addSubview:view1];
+        [self.view sendSubviewToBack:view1];
+    }
+    else{
+        
+        [UIView transitionFromView:view1
+                            toView:view2
+                          duration:2
+                           options:animationTransitionType
+                        completion:^(BOOL finished){
+                            [view1 removeFromSuperview];
+                        }];
+        [self.view addSubview:view2];
+        [self.view sendSubviewToBack:view2];
+        
+    }
+}
+
+-(IBAction)flipFromLeft:(id)sender
+{
+    //[self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromLeft];
+}
+
+- (IBAction)openMainMenu {
+    //[self.navigationController transitionFromViewController:self toViewController:@"MainViewController" duration:.5 options:(UIViewAnimationOptionTransitionFlipFromLeft) animations:nil completion:YES];
+    [self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromRight];
+    [self.navigationController popToRootViewControllerAnimated: YES];
 }
 
 @end

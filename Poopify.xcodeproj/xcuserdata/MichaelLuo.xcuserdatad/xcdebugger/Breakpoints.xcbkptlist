@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Poopify/MainViewController.m"
-         timestampString = "395120391.065985"
+         timestampString = "395192127.690712"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "94"
-         endingLineNumber = "94"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
          landmarkName = "-openMapView"
          landmarkType = "5">
       </FileBreakpoint>

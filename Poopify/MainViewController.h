@@ -7,7 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
-#import "MapViewController.h"
+
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate>
 
@@ -16,6 +16,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *redButton;
 @property (nonatomic, retain) IBOutlet UIButton *greenButton;
 @property (nonatomic, retain) IBOutlet UIButton *blueButton;
+@property (nonatomic, retain) IBOutlet UIButton *resetButton;
 
 
 - (IBAction)openMapView;
@@ -24,5 +25,6 @@
 - (IBAction)doRedButton;
 - (IBAction)doGreenButton;
 - (IBAction)doBlueButton;
+- (IBAction)reset;
 
 @end

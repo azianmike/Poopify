@@ -132,18 +132,13 @@
 		C1278409178BB8B2009FE27E /* Poopify */ = {
 			isa = PBXGroup;
 			children = (
+				C130D359178E15B8009A61CC /* Views */,
 				C1FE6D9D178CF7AC0043724A /* AppDelegate.h */,
 				C1FE6D9E178CF7AC0043724A /* AppDelegate.m */,
 				C127841B178BB8B2009FE27E /* MainStoryboard_iPhone.storyboard */,
 				C127841E178BB8B2009FE27E /* MainStoryboard_iPad.storyboard */,
 				C1278421178BB8B2009FE27E /* MainViewController.h */,
 				C1278422178BB8B2009FE27E /* MainViewController.m */,
-				C1FE6DA0178D0C9F0043724A /* MapViewController.h */,
-				C1FE6DA1178D0C9F0043724A /* MapViewController.m */,
-				C1278424178BB8B2009FE27E /* FlipsideViewController.h */,
-				C1278425178BB8B2009FE27E /* FlipsideViewController.m */,
-				C10ED717178D17A100C7D55F /* ListViewController.h */,
-				C10ED718178D17A100C7D55F /* ListViewController.m */,
 				C127840A178BB8B2009FE27E /* Supporting Files */,
 			);
 			path = Poopify;
@@ -180,6 +175,19 @@
 				C1278436178BB8B2009FE27E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C130D359178E15B8009A61CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1FE6DA0178D0C9F0043724A /* MapViewController.h */,
+				C1FE6DA1178D0C9F0043724A /* MapViewController.m */,
+				C1278424178BB8B2009FE27E /* FlipsideViewController.h */,
+				C1278425178BB8B2009FE27E /* FlipsideViewController.m */,
+				C10ED717178D17A100C7D55F /* ListViewController.h */,
+				C10ED718178D17A100C7D55F /* ListViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

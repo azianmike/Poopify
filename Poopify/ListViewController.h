@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface ListViewController : UIViewController
+{
+    UIView *view1;
+    UIView *view2;
+}
 
+@property (nonatomic, retain) IBOutlet UIButton *mapButton;
+@property (nonatomic, retain) IBOutlet UIButton *mainMenu;
+//@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+- (IBAction)openMapView;
+- (IBAction)openMainMenu;
 @end

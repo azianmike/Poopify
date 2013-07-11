@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "MapViewController.h"
+
 @interface MainViewController ()
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 @end
@@ -21,9 +21,12 @@
 
 - (void)viewDidLoad
 {
+    //[self.navigationController setNavigationBarHidden:YES animated:YES];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Root View";
+    self.navigationItem.hidesBackButton=YES;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,6 +90,11 @@
 - (IBAction) doBlueButton {
 	//_window.backgroundColor = [UIColor blueColor];
     [[self view] setBackgroundColor:[UIColor blueColor]];
+}
+
+- (IBAction) reset {
+	//_window.backgroundColor = [UIColor blueColor];
+    [[self view] setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (IBAction)openMapView {
