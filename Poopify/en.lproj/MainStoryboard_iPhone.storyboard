@@ -171,8 +171,19 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGP-NZ-3hA">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="TGP-NZ-3hA" firstAttribute="leading" secondItem="FzU-im-Igm" secondAttribute="leading" constant="20" type="default" id="DmZ-A2-8wD"/>
+                                            <constraint firstItem="TGP-NZ-3hA" firstAttribute="top" secondItem="FzU-im-Igm" secondAttribute="top" constant="2" id="ggi-Lh-6kC"/>
+                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="gEj-6B-1d1">
                                         <rect key="frame" x="0.0" y="66" width="320" height="44"/>
@@ -341,6 +352,7 @@
         <class className="ListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewController.h"/>
             <relationships>
+                <relationship kind="action" name="flipFromLeft:"/>
                 <relationship kind="action" name="openMainMenu"/>
                 <relationship kind="action" name="openMapView"/>
                 <relationship kind="outlet" name="mainMenu" candidateClass="UIButton"/>
