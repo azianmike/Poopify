@@ -33,6 +33,11 @@
 
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -48,6 +53,7 @@
     
     [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
     
+    
 }
 
 -(void)setUpView{
@@ -60,7 +66,7 @@
     
 }
 
--(void)doTransitionWithType:(UIViewAnimationTransition)animationTransitionType{
+-(void)doTransitionWithType:(UIViewAnimationOptions)animationTransitionType{
     if ([[self.view subviews] containsObject:view2 ]) {
         [UIView transitionFromView:view2
                             toView:view1
@@ -89,7 +95,7 @@
 
 - (IBAction)openMainMenu {
     //[self.navigationController transitionFromViewController:self toViewController:@"MainViewController" duration:.5 options:(UIViewAnimationOptionTransitionFlipFromLeft) animations:nil completion:YES];
-    [self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromRight];
+    //[self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromLeft];
     [self.navigationController popToRootViewControllerAnimated: YES];
 }
 
