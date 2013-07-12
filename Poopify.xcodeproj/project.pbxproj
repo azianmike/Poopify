@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10ED719178D17A100C7D55F /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10ED718178D17A100C7D55F /* ListViewController.m */; };
 		C1278404178BB8B1009FE27E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278403178BB8B1009FE27E /* UIKit.framework */; };
 		C1278406178BB8B2009FE27E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278405178BB8B2009FE27E /* Foundation.framework */; };
 		C1278408178BB8B2009FE27E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278407178BB8B2009FE27E /* CoreGraphics.framework */; };
@@ -25,6 +26,12 @@
 		C1278438178BB8B2009FE27E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1278436178BB8B2009FE27E /* InfoPlist.strings */; };
 		C127843B178BB8B2009FE27E /* PoopifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C127843A178BB8B2009FE27E /* PoopifyTests.m */; };
 		C1278445178BC53E009FE27E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278444178BC53E009FE27E /* MapKit.framework */; };
+		C1E21B79178F5B7B00AD035D /* thumb_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B77178F5B7B00AD035D /* thumb_down.png */; };
+		C1E21B7A178F5B7B00AD035D /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B78178F5B7B00AD035D /* thumb_up.png */; };
+		C1E21B7C178F5ECC00AD035D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B7B178F5ECC00AD035D /* TableViewCell.xib */; };
+		C1E21B7E178FA84700AD035D /* money_dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B7D178FA84700AD035D /* money_dollar.png */; };
+		C1E21B80178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B7F178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png */; };
+		C1E21B83178FA97700AD035D /* TableViewCellControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E21B82178FA97700AD035D /* TableViewCellControllerCell.m */; };
 		C1FE6D9F178CF7AC0043724A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FE6D9E178CF7AC0043724A /* AppDelegate.m */; };
 		C1FE6DA2178D0C9F0043724A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FE6DA1178D0C9F0043724A /* MapViewController.m */; };
 /* End PBXBuildFile section */
@@ -40,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C10ED717178D17A100C7D55F /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		C10ED718178D17A100C7D55F /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		C1278400178BB8B1009FE27E /* Poopify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poopify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1278403178BB8B1009FE27E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C1278405178BB8B2009FE27E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,6 +73,13 @@
 		C1278439178BB8B2009FE27E /* PoopifyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoopifyTests.h; sourceTree = "<group>"; };
 		C127843A178BB8B2009FE27E /* PoopifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoopifyTests.m; sourceTree = "<group>"; };
 		C1278444178BC53E009FE27E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C1E21B77178F5B7B00AD035D /* thumb_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_down.png; sourceTree = "<group>"; };
+		C1E21B78178F5B7B00AD035D /* thumb_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_up.png; sourceTree = "<group>"; };
+		C1E21B7B178F5ECC00AD035D /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		C1E21B7D178FA84700AD035D /* money_dollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money_dollar.png; sourceTree = "<group>"; };
+		C1E21B7F178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1373616020_stock_toilet-paper.png"; sourceTree = "<group>"; };
+		C1E21B81178FA97600AD035D /* TableViewCellControllerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellControllerCell.h; sourceTree = "<group>"; };
+		C1E21B82178FA97700AD035D /* TableViewCellControllerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellControllerCell.m; sourceTree = "<group>"; };
 		C1FE6D9D178CF7AC0043724A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C1FE6D9E178CF7AC0043724A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C1FE6DA0178D0C9F0043724A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -129,17 +145,19 @@
 		C1278409178BB8B2009FE27E /* Poopify */ = {
 			isa = PBXGroup;
 			children = (
+				C1E21B7F178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png */,
+				C1E21B7D178FA84700AD035D /* money_dollar.png */,
+				C1E21B77178F5B7B00AD035D /* thumb_down.png */,
+				C1E21B78178F5B7B00AD035D /* thumb_up.png */,
+				C130D359178E15B8009A61CC /* Views */,
 				C1FE6D9D178CF7AC0043724A /* AppDelegate.h */,
 				C1FE6D9E178CF7AC0043724A /* AppDelegate.m */,
 				C127841B178BB8B2009FE27E /* MainStoryboard_iPhone.storyboard */,
 				C127841E178BB8B2009FE27E /* MainStoryboard_iPad.storyboard */,
 				C1278421178BB8B2009FE27E /* MainViewController.h */,
 				C1278422178BB8B2009FE27E /* MainViewController.m */,
-				C1FE6DA0178D0C9F0043724A /* MapViewController.h */,
-				C1FE6DA1178D0C9F0043724A /* MapViewController.m */,
-				C1278424178BB8B2009FE27E /* FlipsideViewController.h */,
-				C1278425178BB8B2009FE27E /* FlipsideViewController.m */,
 				C127840A178BB8B2009FE27E /* Supporting Files */,
+				C1E21B7B178F5ECC00AD035D /* TableViewCell.xib */,
 			);
 			path = Poopify;
 			sourceTree = "<group>";
@@ -175,6 +193,21 @@
 				C1278436178BB8B2009FE27E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C130D359178E15B8009A61CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1FE6DA0178D0C9F0043724A /* MapViewController.h */,
+				C1FE6DA1178D0C9F0043724A /* MapViewController.m */,
+				C1278424178BB8B2009FE27E /* FlipsideViewController.h */,
+				C1278425178BB8B2009FE27E /* FlipsideViewController.m */,
+				C10ED717178D17A100C7D55F /* ListViewController.h */,
+				C10ED718178D17A100C7D55F /* ListViewController.m */,
+				C1E21B81178FA97600AD035D /* TableViewCellControllerCell.h */,
+				C1E21B82178FA97700AD035D /* TableViewCellControllerCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +287,11 @@
 				C127841A178BB8B2009FE27E /* Default-568h@2x.png in Resources */,
 				C127841D178BB8B2009FE27E /* MainStoryboard_iPhone.storyboard in Resources */,
 				C1278420178BB8B2009FE27E /* MainStoryboard_iPad.storyboard in Resources */,
+				C1E21B79178F5B7B00AD035D /* thumb_down.png in Resources */,
+				C1E21B7A178F5B7B00AD035D /* thumb_up.png in Resources */,
+				C1E21B7C178F5ECC00AD035D /* TableViewCell.xib in Resources */,
+				C1E21B7E178FA84700AD035D /* money_dollar.png in Resources */,
+				C1E21B80178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +331,8 @@
 				C1278426178BB8B2009FE27E /* FlipsideViewController.m in Sources */,
 				C1FE6D9F178CF7AC0043724A /* AppDelegate.m in Sources */,
 				C1FE6DA2178D0C9F0043724A /* MapViewController.m in Sources */,
+				C10ED719178D17A100C7D55F /* ListViewController.m in Sources */,
+				C1E21B83178FA97700AD035D /* TableViewCellControllerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

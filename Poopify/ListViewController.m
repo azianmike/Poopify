@@ -1,19 +1,22 @@
 //
-//  MapViewController.m
+//  ListViewController.m
 //  Poopify
 //
 //  Created by Michael Luo on 7/9/13.
 //  Copyright (c) 2013 Michael Luo. All rights reserved.
 //
 
-#import "MapViewController.h"
+#import <UIKit/UIKit.h>
 #import "ListViewController.h"
-@interface MapViewController ()
+#import "TableViewCellControllerCell.h"
+@interface ListViewController ()
 
 @end
 
-@implementation MapViewController
-
+@implementation ListViewController
+{
+    NSArray *tableData;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,16 +29,38 @@
 
 - (void)viewDidLoad
 {
+    //[self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewDidLoad];
     [self setUpView];
+    tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
 	// Do any additional setup after loading the view.
-    self.navigationItem.title = @"Map View";
 
 }
 
--(void)viewWillDisappear:(BOOL)animated
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    return [tableData count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    TableViewCellControllerCell *cell = (TableViewCellControllerCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.bathroomName.text = [tableData objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return height;
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,15 +69,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)openListView {
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+}
+
+- (IBAction)openMapView {
     
     //MapViewController *oView = [[MapViewController alloc]         initWithNibName:NSStringFromClass([MapViewController class])  bundle:nil];
     
     //oView.title = @"The Other View";
     //[self.navigationController pushViewController:oView animated:YES];
     
-    [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
-    
+    [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     
 }
 
@@ -93,10 +122,17 @@
     }
 }
 
+-(IBAction)flipFromLeft:(id)sender
+{
+    //[self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromLeft];
+}
+
 - (IBAction)openMainMenu {
     //[self.navigationController transitionFromViewController:self toViewController:@"MainViewController" duration:.5 options:(UIViewAnimationOptionTransitionFlipFromLeft) animations:nil completion:YES];
-    //[self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromLeft];
+    //[self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromRight];
     [self.navigationController popToRootViewControllerAnimated: YES];
 }
+
+
 
 @end

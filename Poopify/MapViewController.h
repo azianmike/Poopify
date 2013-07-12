@@ -10,5 +10,14 @@
 
 
 @interface MapViewController : UIViewController
+{
+    UIView *view1;
+    UIView *view2;
+}
 
+
+@property (nonatomic, retain) IBOutlet UIButton *listButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+- (IBAction)openListView;
+- (IBAction)openMainMenu;
 @end

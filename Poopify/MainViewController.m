@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "MapViewController.h"
+
 @interface MainViewController ()
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 @end
@@ -21,9 +21,12 @@
 
 - (void)viewDidLoad
 {
+    //[self.navigationController setNavigationBarHidden:YES animated:YES];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Root View";
+    self.navigationItem.hidesBackButton=YES;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,6 +92,11 @@
     [[self view] setBackgroundColor:[UIColor blueColor]];
 }
 
+- (IBAction) reset {
+	//_window.backgroundColor = [UIColor blueColor];
+    [[self view] setBackgroundColor:[UIColor whiteColor]];
+}
+
 - (IBAction)openMapView {
     
     //MapViewController *oView = [[MapViewController alloc]         initWithNibName:NSStringFromClass([MapViewController class])  bundle:nil];
@@ -100,6 +108,16 @@
     
 }
 
+- (IBAction)openListView {
+    
+    //MapViewController *oView = [[MapViewController alloc]         initWithNibName:NSStringFromClass([MapViewController class])  bundle:nil];
+    
+    //oView.title = @"The Other View";
+    //[self.navigationController pushViewController:oView animated:YES];
+    
+    [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    
+}
 
 
 
