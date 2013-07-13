@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #define height 70;
+
+
 @interface TableViewCellControllerCell : UITableViewCell
 
 
@@ -21,7 +23,7 @@
 @property (nonatomic, weak) IBOutlet UIStoryboard *storyboard;
 @property (nonatomic, strong) UIView *view;
 @property (nonatomic, strong) UINavigationController *navigationController;
-
+@property (nonatomic, assign) id delegate;
 
 -(IBAction)openSelectedItemView;
 

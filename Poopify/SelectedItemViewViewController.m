@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.thumbsUpPercent2.text=_info.thumbsUpPercent.text;
+    self.bathroomName.text=_info.bathroomName.text;
+    [self.thumbsUpPercent2 setNeedsDisplay];
+    [self.bathroomName setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +38,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)transferInfo:(id*)sender
+{
+    
+}
 @end

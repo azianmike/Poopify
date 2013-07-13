@@ -38,9 +38,11 @@
 }
 
 -(IBAction)openSelectedItemView{
-    [self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
+    //[self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
     SelectedItemViewViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
+    controller.info=self;
     [self.navigationController pushViewController:controller animated:YES];
+    
     
 }
 

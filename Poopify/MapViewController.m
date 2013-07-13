@@ -34,8 +34,7 @@
     _mapView.delegate = self;
     //_currentLocation.startUpdatingLocation;
     _mapView.showsUserLocation=YES;
-    [_currentLocation startUpdatingLocation];
-
+    //[_mapView userTrackingMode];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -63,7 +62,11 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     static bool firstLoad=false;
-    if(firstLoad==TRUE) return;
+    if(firstLoad==TRUE)
+    {
+        //self.mapView.centerCoordinate = userLocation.location.coordinate;
+        return;
+    }
     self.mapView.centerCoordinate = userLocation.location.coordinate;
     CLLocationCoordinate2D zoomLocation;
     //zoomLocation.latitude = 39.281516;g
