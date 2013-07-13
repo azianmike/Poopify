@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "ListViewController.h"
+#define METERS_PER_MILE 1609.344
 @interface MapViewController ()
 
 @end
@@ -31,12 +32,53 @@
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"Map View";
     _mapView.delegate = self;
+    //_currentLocation.startUpdatingLocation;
+    _mapView.showsUserLocation=YES;
+    [_currentLocation startUpdatingLocation];
 
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    //_mapView.userLocation=YES;
     
+    
+    //_mapView.u
+    
+    /*CLLocationCoordinate2D zoomLocation;
+    //zoomLocation.latitude = 39.281516;g
+    zoomLocation.latitude = _currentLocation.location.coordinate.latitude;
+    //zoomLocation.longitude= -76.580806;
+    zoomLocation.longitude = _currentLocation.location.coordinate.longitude;
+    
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    
+    // 3
+    [_mapView setRegion:viewRegion animated:NO];
+    [_mapView regionThatFits:viewRegion];
+    [_mapView setCenterCoordinate:zoomLocation animated:NO];*/
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    static bool firstLoad=false;
+    if(firstLoad==TRUE) return;
+    self.mapView.centerCoordinate = userLocation.location.coordinate;
+    CLLocationCoordinate2D zoomLocation;
+    //zoomLocation.latitude = 39.281516;g
+    zoomLocation.latitude = _mapView.userLocation.coordinate.latitude;
+    //zoomLocation.longitude= -76.580806;
+    zoomLocation.longitude = _mapView.userLocation.coordinate.longitude;
+    
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    
+    // 3
+    [_mapView setRegion:viewRegion animated:YES];
+    [_mapView regionThatFits:viewRegion];
+    [_mapView setCenterCoordinate:zoomLocation animated:YES];
+    firstLoad=true;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
