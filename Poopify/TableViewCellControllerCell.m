@@ -7,13 +7,18 @@
 //
 
 #import "TableViewCellControllerCell.h"
-
+#import "SelectedItemViewViewController.h"
 @implementation TableViewCellControllerCell
 @synthesize bathroomName = _bathroomName;
 @synthesize thumbsUpPercent = _thumbsUpPercent;
 @synthesize thumbsDownPercent = _thumbsDownPercent;
 @synthesize dollarImage = _dollarImage;
 @synthesize toiletImage = _toiletImage;
+@synthesize selectedItem=_selectedItem;
+@synthesize storyboard=_storyboard;
+@synthesize view=_view;
+@synthesize navigationController;
+//@synthesize tableView=_tableView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -21,6 +26,7 @@
     if (self) {
         // Initialization code
     }
+    
     return self;
 }
 
@@ -30,5 +36,13 @@
 
     // Configure the view for the selected state
 }
+
+-(IBAction)openSelectedItemView{
+    [self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
+    SelectedItemViewViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
+    [self.navigationController pushViewController:controller animated:YES];
+    
+}
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableViewCellControllerCell.h"
 
 @interface ListViewController : UIViewController<UITableViewDataSource, UITableViewDataSource>
 {
@@ -16,6 +17,7 @@
 
 @property (nonatomic, retain) IBOutlet UIButton *mapButton;
 @property (nonatomic, retain) IBOutlet UIButton *mainMenu;
+@property (nonatomic, weak) IBOutlet UILabel *bathroomName;
 //@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
 - (IBAction)openMapView;
 - (IBAction)openMainMenu;

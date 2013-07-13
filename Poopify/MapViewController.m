@@ -27,10 +27,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setUpView];
+    //[self setUpView];
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"Map View";
+    _mapView.delegate = self;
 
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated

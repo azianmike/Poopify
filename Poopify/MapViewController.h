@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<MKMapViewDelegate>
 {
     UIView *view1;
     UIView *view2;
 }
 
-
+@property (nonatomic, strong) MKMapView * mapView;
 @property (nonatomic, retain) IBOutlet UIButton *listButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
 - (IBAction)openListView;

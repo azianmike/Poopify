@@ -55,6 +55,9 @@
     }
     
     cell.bathroomName.text = [tableData objectAtIndex:indexPath.row];
+    cell.storyboard=[self storyboard];
+    cell.view = [self view];
+    cell.navigationController=self.navigationController;
     return cell;
 }
 

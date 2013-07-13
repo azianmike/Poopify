@@ -58,7 +58,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa0-hX-exe">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="nqg-Zg-1EE"/>
+                                    <constraint firstAttribute="width" constant="73" id="bmf-Q6-Ug5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Blue">
@@ -72,13 +72,9 @@
                                     <action selector="doBlueButton" destination="2" eventType="touchUpInside" id="EMD-59-vvi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOa-Mc-kOA">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="hAH-qR-dhL"/>
-                                    <constraint firstAttribute="height" constant="64" id="xph-nx-W2c"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOa-Mc-kOA">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Go to Map">
+                                <state key="normal" image="MapPin.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -90,12 +86,9 @@
                                     <segue destination="SRj-bl-3g2" kind="push" id="lMW-b0-vyE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4Q-tU-NGU">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="uH5-9R-eIB"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4Q-tU-NGU">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Go to List">
+                                <state key="normal" image="MaleFemaleSymbol.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -120,25 +113,46 @@
                                     <action selector="reset" destination="2" eventType="touchUpInside" id="yWT-71-y8j"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Map 'em" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKK-zM-ipb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4Pm-bs-E9M"/>
+                                    <constraint firstAttribute="height" constant="30" id="EBc-GM-RZv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="List 'em" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2s-va-yAX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8tj-8O-gxP"/>
+                                    <constraint firstAttribute="width" constant="60" id="eT1-U1-U95"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="iOa-Mc-kOA" secondAttribute="bottom" constant="60" id="7Co-wd-v40"/>
-                            <constraint firstItem="iOa-Mc-kOA" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CVC-s0-VGf"/>
+                            <constraint firstItem="IKK-zM-ipb" firstAttribute="top" secondItem="iOa-Mc-kOA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5JF-EW-HqP"/>
                             <constraint firstItem="Aa0-hX-exe" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DLJ-Bz-7fV"/>
                             <constraint firstItem="Aa0-hX-exe" firstAttribute="top" secondItem="3" secondAttribute="top" constant="100" id="Fwf-hc-Ptj"/>
-                            <constraint firstItem="h4Q-tU-NGU" firstAttribute="bottom" secondItem="iOa-Mc-kOA" secondAttribute="bottom" type="default" id="Hwv-zj-2zL"/>
                             <constraint firstAttribute="trailing" secondItem="Cue-jI-hYp" secondAttribute="trailing" constant="33" id="IZG-n3-CbI"/>
+                            <constraint firstAttribute="trailing" secondItem="h4Q-tU-NGU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JM7-Za-JXe"/>
+                            <constraint firstItem="iOa-Mc-kOA" firstAttribute="trailing" secondItem="Aa0-hX-exe" secondAttribute="trailing" type="default" id="Ksy-JT-iQD"/>
+                            <constraint firstItem="IKK-zM-ipb" firstAttribute="centerX" secondItem="iOa-Mc-kOA" secondAttribute="centerX" type="default" id="LKJ-ry-p8z"/>
                             <constraint firstItem="Sph-wY-uVb" firstAttribute="baseline" secondItem="Aa0-hX-exe" secondAttribute="baseline" type="default" id="RxG-MF-UqD"/>
-                            <constraint firstItem="h4Q-tU-NGU" firstAttribute="top" secondItem="iOa-Mc-kOA" secondAttribute="top" type="default" id="VEN-we-KJ9"/>
                             <constraint firstItem="10" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="Y7e-6d-NBF"/>
                             <constraint firstItem="Cue-jI-hYp" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="a5X-2z-619"/>
-                            <constraint firstAttribute="trailing" secondItem="h4Q-tU-NGU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bjc-Z4-3nd"/>
+                            <constraint firstItem="h4Q-tU-NGU" firstAttribute="top" secondItem="iOa-Mc-kOA" secondAttribute="top" type="default" id="acp-aX-A89"/>
                             <constraint firstItem="10" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="eKr-gx-90M"/>
+                            <constraint firstItem="e2s-va-yAX" firstAttribute="centerX" secondItem="h4Q-tU-NGU" secondAttribute="centerX" type="default" id="jvp-UC-NAh"/>
                             <constraint firstItem="Sph-wY-uVb" firstAttribute="leading" secondItem="Cue-jI-hYp" secondAttribute="leading" type="default" id="kd1-wv-elT"/>
                             <constraint firstItem="y6a-xa-6cr" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="l4r-6c-4uS"/>
                             <constraint firstItem="Sph-wY-uVb" firstAttribute="trailing" secondItem="Cue-jI-hYp" secondAttribute="trailing" type="default" id="t2n-cS-YDC"/>
+                            <constraint firstAttribute="bottom" secondItem="e2s-va-yAX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tEB-Kg-1yg"/>
                             <constraint firstItem="y6a-xa-6cr" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tMe-M0-m0m"/>
+                            <constraint firstAttribute="bottom" secondItem="h4Q-tU-NGU" secondAttribute="bottom" constant="60" id="taN-75-z0n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BRw-yq-waO"/>
@@ -196,6 +210,20 @@
             </objects>
             <point key="canvasLocation" x="948" y="-118"/>
         </scene>
+        <!--Selected Item View View Controller - SelectedItemView-->
+        <scene sceneID="vR0-Qz-V5j">
+            <objects>
+                <viewController storyboardIdentifier="SelectedItemView" title="SelectedItemView" id="ocP-WE-n6N" customClass="SelectedItemViewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C3c-9O-wua">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKF-4x-ECf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1618" y="216"/>
+        </scene>
         <!--Map View Controller - MapViewController-->
         <scene sceneID="zS8-Ft-PH0">
             <objects>
@@ -252,6 +280,10 @@
             <point key="canvasLocation" x="-51" y="182"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MaleFemaleSymbol.png" width="128" height="128"/>
+        <image name="MapPin.png" width="64" height="128"/>
+    </resources>
     <classes>
         <class className="FirstResponder">
             <source key="sourceIdentifier" type="user"/>
@@ -264,6 +296,7 @@
             <relationships>
                 <relationship kind="action" name="openMainMenu"/>
                 <relationship kind="action" name="openMapView"/>
+                <relationship kind="outlet" name="bathroomName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mainMenu" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mapButton" candidateClass="UIButton"/>
             </relationships>
@@ -295,6 +328,9 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="SelectedItemViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectedItemViewViewController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -302,7 +338,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="47P-q7-VvY"/>
+        <segue reference="ltX-zn-tos"/>
         <segue reference="Md0-U0-G0r"/>
     </inferredMetricsTieBreakers>
 </document>

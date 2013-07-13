@@ -26,12 +26,15 @@
 		C1278438178BB8B2009FE27E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1278436178BB8B2009FE27E /* InfoPlist.strings */; };
 		C127843B178BB8B2009FE27E /* PoopifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C127843A178BB8B2009FE27E /* PoopifyTests.m */; };
 		C1278445178BC53E009FE27E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278444178BC53E009FE27E /* MapKit.framework */; };
+		C175D51E1790F54E0069B766 /* SelectedItemViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C175D51D1790F54E0069B766 /* SelectedItemViewViewController.m */; };
 		C1E21B79178F5B7B00AD035D /* thumb_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B77178F5B7B00AD035D /* thumb_down.png */; };
 		C1E21B7A178F5B7B00AD035D /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B78178F5B7B00AD035D /* thumb_up.png */; };
 		C1E21B7C178F5ECC00AD035D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B7B178F5ECC00AD035D /* TableViewCell.xib */; };
 		C1E21B7E178FA84700AD035D /* money_dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B7D178FA84700AD035D /* money_dollar.png */; };
 		C1E21B80178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B7F178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png */; };
 		C1E21B83178FA97700AD035D /* TableViewCellControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E21B82178FA97700AD035D /* TableViewCellControllerCell.m */; };
+		C1E21B891790976800AD035D /* MaleFemaleSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B871790976700AD035D /* MaleFemaleSymbol.png */; };
+		C1E21B8A1790976800AD035D /* MapPin.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B881790976700AD035D /* MapPin.png */; };
 		C1FE6D9F178CF7AC0043724A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FE6D9E178CF7AC0043724A /* AppDelegate.m */; };
 		C1FE6DA2178D0C9F0043724A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FE6DA1178D0C9F0043724A /* MapViewController.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +76,8 @@
 		C1278439178BB8B2009FE27E /* PoopifyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoopifyTests.h; sourceTree = "<group>"; };
 		C127843A178BB8B2009FE27E /* PoopifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoopifyTests.m; sourceTree = "<group>"; };
 		C1278444178BC53E009FE27E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C175D51C1790F54E0069B766 /* SelectedItemViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedItemViewViewController.h; sourceTree = "<group>"; };
+		C175D51D1790F54E0069B766 /* SelectedItemViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedItemViewViewController.m; sourceTree = "<group>"; };
 		C1E21B77178F5B7B00AD035D /* thumb_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_down.png; sourceTree = "<group>"; };
 		C1E21B78178F5B7B00AD035D /* thumb_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_up.png; sourceTree = "<group>"; };
 		C1E21B7B178F5ECC00AD035D /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -80,6 +85,8 @@
 		C1E21B7F178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1373616020_stock_toilet-paper.png"; sourceTree = "<group>"; };
 		C1E21B81178FA97600AD035D /* TableViewCellControllerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellControllerCell.h; sourceTree = "<group>"; };
 		C1E21B82178FA97700AD035D /* TableViewCellControllerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellControllerCell.m; sourceTree = "<group>"; };
+		C1E21B871790976700AD035D /* MaleFemaleSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MaleFemaleSymbol.png; sourceTree = "<group>"; };
+		C1E21B881790976700AD035D /* MapPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapPin.png; sourceTree = "<group>"; };
 		C1FE6D9D178CF7AC0043724A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C1FE6D9E178CF7AC0043724A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C1FE6DA0178D0C9F0043724A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -145,6 +152,8 @@
 		C1278409178BB8B2009FE27E /* Poopify */ = {
 			isa = PBXGroup;
 			children = (
+				C1E21B871790976700AD035D /* MaleFemaleSymbol.png */,
+				C1E21B881790976700AD035D /* MapPin.png */,
 				C1E21B7F178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png */,
 				C1E21B7D178FA84700AD035D /* money_dollar.png */,
 				C1E21B77178F5B7B00AD035D /* thumb_down.png */,
@@ -206,6 +215,8 @@
 				C10ED718178D17A100C7D55F /* ListViewController.m */,
 				C1E21B81178FA97600AD035D /* TableViewCellControllerCell.h */,
 				C1E21B82178FA97700AD035D /* TableViewCellControllerCell.m */,
+				C175D51C1790F54E0069B766 /* SelectedItemViewViewController.h */,
+				C175D51D1790F54E0069B766 /* SelectedItemViewViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -292,6 +303,8 @@
 				C1E21B7C178F5ECC00AD035D /* TableViewCell.xib in Resources */,
 				C1E21B7E178FA84700AD035D /* money_dollar.png in Resources */,
 				C1E21B80178FA8EE00AD035D /* 1373616020_stock_toilet-paper.png in Resources */,
+				C1E21B891790976800AD035D /* MaleFemaleSymbol.png in Resources */,
+				C1E21B8A1790976800AD035D /* MapPin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +346,7 @@
 				C1FE6DA2178D0C9F0043724A /* MapViewController.m in Sources */,
 				C10ED719178D17A100C7D55F /* ListViewController.m in Sources */,
 				C1E21B83178FA97700AD035D /* TableViewCellControllerCell.m in Sources */,
+				C175D51E1790F54E0069B766 /* SelectedItemViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #define height 70;
 @interface TableViewCellControllerCell : UITableViewCell
 
@@ -16,5 +17,12 @@
 @property (nonatomic, weak) IBOutlet UILabel *thumbsDownPercent;
 @property (nonatomic, weak) IBOutlet UIImageView *dollarImage;
 @property (nonatomic, weak) IBOutlet UIImageView *toiletImage;
+@property (nonatomic, retain) IBOutlet UIButton *selectedItem;
+@property (nonatomic, weak) IBOutlet UIStoryboard *storyboard;
+@property (nonatomic, strong) UIView *view;
+@property (nonatomic, strong) UINavigationController *navigationController;
+
+
+-(IBAction)openSelectedItemView;
 
 @end
