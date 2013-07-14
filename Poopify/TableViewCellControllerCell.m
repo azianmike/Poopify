@@ -42,6 +42,7 @@
     //[self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
     SelectedItemViewViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
     controller.info=self;
+    controller.data=self.data;
     [self.navigationController pushViewController:controller animated:YES];
     
     
