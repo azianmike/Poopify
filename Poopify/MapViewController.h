@@ -16,7 +16,7 @@
 }
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) CLLocationManager *currentLocation;
-//@property (nonatomic, strong) IBOutlet MKMapView * mapView;
+
 @property (nonatomic, retain) IBOutlet UIButton *listButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
 - (IBAction)openListView;

@@ -67,6 +67,7 @@ static bool firstLoad=false;
     [_mapView regionThatFits:viewRegion];
     [_mapView setCenterCoordinate:zoomLocation animated:NO];*/
     firstLoad=FALSE;
+    //[_mapView setUserTrackingMode:MKUserTrackingModeNone];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TableViewCellControllerCell.h"
+#import <MapKit/MapKit.h>
 
-@interface SelectedItemViewViewController : UIViewController
+@interface SelectedItemViewViewController : UIViewController<MKMapViewDelegate, MKAnnotation>
 
 @property (nonatomic, assign) TableViewCellControllerCell *info;
 @property (nonatomic, assign) IBOutlet UILabel *bathroomName;
@@ -18,6 +19,6 @@
 
 @property (nonatomic, assign) IBOutlet UIButton *thumbsUpButton;
 @property (nonatomic, assign) IBOutlet UIButton *thumbsDownButton;
-
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end

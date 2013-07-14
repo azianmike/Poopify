@@ -65,6 +65,7 @@
     int thumbsDownNumber=100-thumbsUpNumber;
     //randomNumber=0+randomNumber%(100);
     cell.bathroomName.text = [tableData objectAtIndex:indexPath.row];
+    cell.location=[locationData objectAtIndex:indexPath.row];
     cell.storyboard=[self storyboard];
     cell.view = [self view];
     NSString *thumbsUpLabel=[NSString stringWithFormat:@"%d%%", thumbsUpNumber];
