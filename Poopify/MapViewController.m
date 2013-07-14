@@ -140,9 +140,17 @@ static bool firstLoad=TRUE;
     for (id<MKAnnotation> annotation in _mapView.annotations) {
         [_mapView removeAnnotation:annotation];
     }
-    
+    for (Bathroom *b in _bathrooms) {
+        NSString * description = b.bathroomName.text;
+        NSString * address = [@"Thumbs Up: " stringByAppendingString:b.thumbsUpPercent.text];
+        
+        CLLocationCoordinate2D coordinate = b.location.coordinate;
+        
+        BathroomAnnotation_Test *annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+        [_mapView addAnnotation:annotation];
+    }
    
-    NSNumber * latitude = [NSNumber numberWithDouble:(39.0365 )];
+    /*NSNumber * latitude = [NSNumber numberWithDouble:(39.0365 )];
     NSNumber * longitude = [NSNumber numberWithDouble:(-94.58334 )];
     NSString * description = @"Johnson Hall";
     NSString * address = @"StankRank: 7.2";
@@ -186,7 +194,7 @@ static bool firstLoad=TRUE;
     coordinate.longitude = longitude.doubleValue;
     
     annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
-    [_mapView addAnnotation:annotation];
+    [_mapView addAnnotation:annotation];*/
 }
 
 
