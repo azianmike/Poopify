@@ -8,6 +8,8 @@
 
 #import "MapViewController.h"
 #import "ListViewController.h"
+#import "BathroomAnnotation_Test.h"
+#import "SelectedItemViewViewController.h"
 
 #define METERS_PER_MILE 1609.344
 @interface MapViewController ()
@@ -17,9 +19,11 @@
 @end
 
 @implementation MapViewController
+
 NSMutableArray *bathroom2;
-static bool firstLoad=false;
+static bool firstLoad=TRUE;
 @synthesize bathrooms=_bathrooms;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,12 +43,7 @@ static bool firstLoad=false;
     //_currentLocation.startUpdatingLocation;
     _mapView.showsUserLocation=YES;
     
-    CLLocation *fogoDeChao=[[CLLocation alloc] initWithLatitude:39.042411 longitude:-94.589985];
-    CLLocation *IC=[[CLLocation alloc] initWithLatitude:38.943706 longitude:-94.532409];
-    CLLocation *mcdonalds=[[CLLocation alloc] initWithLatitude:38.953502 longitude:-94.525705];
-    CLLocation *johnsonHall=[[CLLocation alloc] initWithLatitude:39.036553 longitude:-94.583285];
-    
-    locationData=[NSArray arrayWithObjects:IC, mcdonalds, johnsonHall,fogoDeChao, nil];
+
     //[_mapView userTrackingMode];
 }
 
@@ -52,39 +51,45 @@ static bool firstLoad=false;
 {
     //_mapView.userLocation=YES;
     
-    
-    firstLoad=FALSE;
     //[_mapView setUserTrackingMode:MKUserTrackingModeNone];
+
+    [self plotBathrooms];
+
+    if (!firstLoad) {
+        [self centerView];
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     
-    if(firstLoad==TRUE)
+    if(firstLoad)
     {
         //self.mapView.centerCoordinate = userLocation.location.coordinate;
-        return;
+        [self centerView];
+        firstLoad=FALSE;
     }
-    self.mapView.centerCoordinate = userLocation.location.coordinate;
-    CLLocationCoordinate2D zoomLocation;
-    //zoomLocation.latitude = 39.281516;g
-    zoomLocation.latitude = _mapView.userLocation.coordinate.latitude;
-    //zoomLocation.longitude= -76.580806;
-    zoomLocation.longitude = _mapView.userLocation.coordinate.longitude;
-    
+
+}
+
+- (void) centerView {
+    //self.mapView.centerCoordinate = *(userLocation);
+    CLLocationCoordinate2D zoomLocation = _mapView.userLocation.coordinate;
+    //zoomLocation.latitude = _mapView.userLocation.coordinate.latitude;
+    //zoomLocation.longitude = _mapView.userLocation.coordinate.longitude;
+    NSLog(@"(%f,%f)",zoomLocation.latitude, zoomLocation.longitude);
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
     
     // 3
     [_mapView setRegion:viewRegion animated:YES];
-    [_mapView regionThatFits:viewRegion];
-    [_mapView setCenterCoordinate:zoomLocation animated:YES];
-    firstLoad=TRUE;
+    //[_mapView regionThatFits:viewRegion];
+    //[_mapView setCenterCoordinate:zoomLocation animated:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    firstLoad=FALSE;
+    //firstLoad=FALSE;
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,6 +121,123 @@ static bool firstLoad=false;
     [self.navigationController popToRootViewControllerAnimated:YES];
     
     //[self.navigationController pushViewController:controller animated:YES];
+
+    firstLoad=TRUE;
+}
+
+
+/*
+ * Put annotations on map
+ *
+ */
+
+- (void)plotBathrooms {
+    for (id<MKAnnotation> annotation in _mapView.annotations) {
+        [_mapView removeAnnotation:annotation];
+    }
+       
+    NSNumber * latitude = [NSNumber numberWithDouble:(39.0365 )];
+    NSNumber * longitude = [NSNumber numberWithDouble:(-94.58334 )];
+    NSString * description = @"Johnson Hall";
+    NSString * address = @"StankRank: 7.2";
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = latitude.doubleValue;
+    coordinate.longitude = longitude.doubleValue;
+    
+    BathroomAnnotation_Test *annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+    [_mapView addAnnotation:annotation];
+    
+    
+    latitude = [NSNumber numberWithDouble:(38.953502 )];
+    longitude = [NSNumber numberWithDouble:(-94.525705)];
+    description = @"McDonald's";
+    address = @"StankRank: 6.5";
+
+    coordinate.latitude = latitude.doubleValue;
+    coordinate.longitude = longitude.doubleValue;
+    
+    annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+    [_mapView addAnnotation:annotation];
+    
+    latitude = [NSNumber numberWithDouble:(38.943706 )];
+    longitude = [NSNumber numberWithDouble:(-94.532409)];
+    description = @"Cerner Innovation Campus";
+    address = @"StankRank: 9.9";
+    
+    coordinate.latitude = latitude.doubleValue;
+    coordinate.longitude = longitude.doubleValue;
+    
+    annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+    [_mapView addAnnotation:annotation];
+    
+    latitude = [NSNumber numberWithDouble:(39.042411 )];
+    longitude = [NSNumber numberWithDouble:(-94.589985)];
+    description = @"Fogo De Chao";
+    address = @"StankRank: 8.4";
+    
+    coordinate.latitude = latitude.doubleValue;
+    coordinate.longitude = longitude.doubleValue;
+    
+    annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+    [_mapView addAnnotation:annotation];
+}
+
+
+/*
+ * Annotations and Callouts for BathroomAnnotation
+ *
+ *
+ */
+
+- (MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:(id <MKAnnotation>)annotation{
+    
+    MKAnnotationView *view = nil;
+    //MKPinAnnotationView *view=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"HotSpotsLoc"];
+    
+    if(annotation !=_mapView.userLocation){
+        //view = (MKAnnotationView *)
+        view = (MKPinAnnotationView *)
+        [_mapView dequeueReusableAnnotationViewWithIdentifier:@"identifier"];
+        if(nil == view) {
+            //view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"identifier"];
+            //view=[[MKAnnotationView alloc] init];
+            view=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"identifier"];
+            
+        }
+        
+        
+        //id <MKAnnotation> *currPlaceMark = &annotation;
+        //NSLog(@"%i",currPlaceMark.position);
+        
+        //view.image = [UIImage imageNamed:@"1373616020_stock_toilet-paper.png"];
+        /* view.pinColor = MKPinAnnotationColorRed;
+         view.animatesDrop = YES;
+         view.canShowCallout = YES;*/
+        UIButton *btnViewVenue = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        view.rightCalloutAccessoryView=btnViewVenue;
+        view.enabled = YES;
+        view.canShowCallout = YES;
+        view.multipleTouchEnabled = NO;
+        
+        //view.animatesDrop = YES;
+        
+    }
+    return view;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    // here we illustrate how to detect which annotation type was clicked on for its callout
+    id <MKAnnotation> annotation = [view annotation];
+    if ([annotation isKindOfClass:[BathroomAnnotation_Test class]])
+    {
+        NSLog(@"clicked BathroomInfo");
+    }
+    /*SelectedItemViewViewController *controller =[self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
+    TableViewCellControllerCell *passData = [[TableViewCellControllerCell alloc] init];
+    passData.bathroomName
+    [self.navigationController pushViewController:controller animated:YES];*/
 }
 
 @end
