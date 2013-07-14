@@ -14,6 +14,7 @@
     UIView *view1;
     UIView *view2;
 }
+- (void) centerView;//:(MKMapView *)mapView centerView:(MKUserLocation *)userLocation;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) CLLocationManager *currentLocation;
 //@property (nonatomic, strong) IBOutlet MKMapView * mapView;

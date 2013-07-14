@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "ListViewController.h"
 #import "BathroomAnnotation_Test.h"
+#import "SelectedItemViewViewController.h"
 #define METERS_PER_MILE 1609.344
 @interface MapViewController ()
 {
@@ -17,7 +18,7 @@
 @end
 
 @implementation MapViewController
-static bool firstLoad=false;
+static bool firstLoad=TRUE;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,52 +48,42 @@ static bool firstLoad=false;
     //_mapView.userLocation=YES;
     
     [self plotBathrooms];
-    //_mapView.u
-    
-    /*CLLocationCoordinate2D zoomLocation;
-    //zoomLocation.latitude = 39.281516;g
-    zoomLocation.latitude = _currentLocation.location.coordinate.latitude;
-    //zoomLocation.longitude= -76.580806;
-    zoomLocation.longitude = _currentLocation.location.coordinate.longitude;
-    
-    // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-    
-    // 3
-    [_mapView setRegion:viewRegion animated:NO];
-    [_mapView regionThatFits:viewRegion];
-    [_mapView setCenterCoordinate:zoomLocation animated:NO];*/
-    firstLoad=FALSE;
+
+    if (!firstLoad) {
+        [self centerView];
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     
-    if(firstLoad==TRUE)
+    if(firstLoad)
     {
         //self.mapView.centerCoordinate = userLocation.location.coordinate;
-        return;
+        [self centerView];
+        firstLoad=FALSE;
     }
-    self.mapView.centerCoordinate = userLocation.location.coordinate;
-    CLLocationCoordinate2D zoomLocation;
-    //zoomLocation.latitude = 39.281516;g
-    zoomLocation.latitude = _mapView.userLocation.coordinate.latitude;
-    //zoomLocation.longitude= -76.580806;
-    zoomLocation.longitude = _mapView.userLocation.coordinate.longitude;
-    
+
+}
+
+- (void) centerView {
+    //self.mapView.centerCoordinate = *(userLocation);
+    CLLocationCoordinate2D zoomLocation = _mapView.userLocation.coordinate;
+    //zoomLocation.latitude = _mapView.userLocation.coordinate.latitude;
+    //zoomLocation.longitude = _mapView.userLocation.coordinate.longitude;
+    NSLog(@"(%f,%f)",zoomLocation.latitude, zoomLocation.longitude);
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 50*METERS_PER_MILE, 50*METERS_PER_MILE);
     
     // 3
     [_mapView setRegion:viewRegion animated:YES];
-    [_mapView regionThatFits:viewRegion];
-    [_mapView setCenterCoordinate:zoomLocation animated:YES];
-    firstLoad=TRUE;
+    //[_mapView regionThatFits:viewRegion];
+    //[_mapView setCenterCoordinate:zoomLocation animated:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    firstLoad=FALSE;
+    //firstLoad=FALSE;
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,6 +145,7 @@ static bool firstLoad=false;
     //[self.navigationController transitionFromViewController:self toViewController:@"MainViewController" duration:.5 options:(UIViewAnimationOptionTransitionFlipFromLeft) animations:nil completion:YES];
     //[self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromLeft];
     [self.navigationController popToRootViewControllerAnimated: YES];
+    firstLoad=TRUE;
 }
 
 
@@ -265,8 +257,10 @@ static bool firstLoad=false;
     {
         NSLog(@"clicked BathroomInfo");
     }
-    
-    //[self.navigationController pushViewController:self.modalViewController animated:YES];
+    /*SelectedItemViewViewController *controller =[self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
+    TableViewCellControllerCell *passData = [[TableViewCellControllerCell alloc] init];
+    passData.bathroomName
+    [self.navigationController pushViewController:controller animated:YES];*/
 }
 
 @end
