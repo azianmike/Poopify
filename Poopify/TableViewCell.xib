@@ -165,7 +165,6 @@
 								<string key="NSFrame">{{274, 23}, {29, 31}}</string>
 								<reference key="NSSuperview" ref="742325508"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="IBUIRestorationIdentifier">ArrowButton</string>
@@ -281,6 +280,7 @@
 					<bytes key="NSRGB">MC42MzE5NjMzMTUyIDAuNjMxOTYzMzE1MiAwLjYzMTk2MzMxNTIAA</bytes>
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="742325508"/>
 				<string key="IBUIReuseIdentifier">TableViewCellControllerCell</string>
 			</object>
