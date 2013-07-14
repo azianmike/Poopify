@@ -15,6 +15,7 @@
 
 @implementation SelectedItemViewViewController
 static bool firstLoad;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -86,8 +87,75 @@ static bool firstLoad;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)transferInfo:(id*)sender
+-(IBAction)thumbsUpButtonPressed
 {
+    if(![_data getVoted])
+    {
+        NSString *percent = _thumbsUpPercent2.text;
+        [percent substringToIndex:([percent length]-1)];
+        int percentValue=[percent intValue];
+        percentValue++;
+        NSString *newValue = [NSString stringWithFormat:@"%d%%", percentValue];
+        _thumbsUpPercent2.text=newValue;
+        
+        percent = _thumbsDownPercent.text;
+        [percent substringToIndex:([percent length]-1)];
+        percentValue=[percent intValue];
+        percentValue--;
+        newValue = [NSString stringWithFormat:@"%d%%", percentValue];
+        _thumbsDownPercent.text=newValue;
+        [_data setVoted];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voted"
+                                                        message:@"You think this bathroom isn't super crappy!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"You Already Voted!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
+}
+-(IBAction)thumbsDownButtonPressed
+{
+    if(![_data getVoted])
+    {
+        NSString *percent = _thumbsUpPercent2.text;
+        [percent substringToIndex:([percent length]-1)];
+        int percentValue=[percent intValue];
+        percentValue--;
+        NSString *newValue = [NSString stringWithFormat:@"%d%%", percentValue];
+        _thumbsUpPercent2.text=newValue;
+        
+        percent = _thumbsDownPercent.text;
+        [percent substringToIndex:([percent length]-1)];
+        percentValue=[percent intValue];
+        percentValue++;
+        newValue = [NSString stringWithFormat:@"%d%%", percentValue];
+        _thumbsDownPercent.text=newValue;
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voted"
+                                                        message:@"You think this bathroom IS super crappy!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [_data setVoted];
+    }else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"You Already Voted!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 @end

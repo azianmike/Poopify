@@ -22,5 +22,8 @@
 @property (nonatomic, strong) UINavigationController *navigationController;
 
 @property (nonatomic, strong) CLLocation *location;
+@property (nonatomic) bool voted;
 
+-(void) setVoted;
+-(bool) getVoted;
 @end

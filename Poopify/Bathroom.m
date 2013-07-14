@@ -9,6 +9,7 @@
 #import "Bathroom.h"
 
 @implementation Bathroom
+
 @synthesize bathroomName = _bathroomName;
 @synthesize thumbsUpPercent = _thumbsUpPercent;
 @synthesize thumbsDownPercent = _thumbsDownPercent;
@@ -18,6 +19,7 @@
 @synthesize storyboard=_storyboard;
 @synthesize view=_view;
 @synthesize navigationController;
+@synthesize voted;
 
 -(id)init
 {
@@ -26,7 +28,16 @@
     _thumbsUpPercent=[[UILabel alloc] init];
     _dollarImage=[[UIImageView alloc] init];
     _toiletImage=[[UIImageView alloc] init];
+    voted = false;
     return self;
 }
 
+-(void) setVoted
+{
+    voted=true;
+}
+-(bool) getVoted
+{
+    return voted;
+}
 @end

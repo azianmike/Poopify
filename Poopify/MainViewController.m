@@ -31,7 +31,7 @@
     //[self.navigationController setNavigationBarHidden:YES animated:YES];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.title = @"Root View";
+    self.navigationItem.title = @"Poopify Me Captain";
     self.navigationItem.hidesBackButton=YES;
     
     tableData = [NSArray arrayWithObjects:@"Innovations Campus", @"McDonalds", @"Johnson Hall", @"Fogo De Chao", nil];

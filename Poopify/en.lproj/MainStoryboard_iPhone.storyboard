@@ -274,6 +274,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="thumbsUpButtonPressed" destination="ocP-WE-n6N" eventType="touchUpInside" id="iMG-2B-6VP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCQ-kz-q14">
                                         <constraints>
@@ -287,6 +290,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="thumbsDownButtonPressed" destination="ocP-WE-n6N" eventType="touchUpInside" id="5WH-dD-jQ2"/>
+                                        </connections>
                                     </button>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uAP-Ud-60X">
                                         <constraints>
@@ -332,6 +338,7 @@
                             <constraint firstItem="PmN-kX-PvH" firstAttribute="trailing" secondItem="C3c-9O-wua" secondAttribute="trailing" type="default" id="uWz-e1-EbT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iZE-GV-nn3"/>
                     <connections>
                         <outlet property="bathroomName" destination="gBz-Gf-8V3" id="EUQ-9u-M6T"/>
                         <outlet property="mapView" destination="uAP-Ud-60X" id="xYz-Hn-ttL"/>
@@ -482,6 +489,8 @@
         <class className="SelectedItemViewViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectedItemViewViewController.h"/>
             <relationships>
+                <relationship kind="action" name="thumbsDownButtonPressed"/>
+                <relationship kind="action" name="thumbsUpButtonPressed"/>
                 <relationship kind="outlet" name="bathroomName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="thumbsDownButton" candidateClass="UIButton"/>

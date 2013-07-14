@@ -24,4 +24,9 @@
 
 @property (nonatomic, strong) Bathroom *data;
 
+
+
+-(IBAction)thumbsUpButtonPressed;
+-(IBAction)thumbsDownButtonPressed;
+
 @end
