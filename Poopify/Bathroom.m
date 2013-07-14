@@ -9,5 +9,9 @@
 #import "Bathroom.h"
 
 @implementation Bathroom
+    NSNumber * latitude;
+    NSNumber * longitude;
+    NSString * description;
+    NSString * address;
 
 @end

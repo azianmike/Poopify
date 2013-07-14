@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "ListViewController.h"
+#import "BathroomAnnotation_Test.h"
 #define METERS_PER_MILE 1609.344
 @interface MapViewController ()
 {
@@ -37,12 +38,7 @@ static bool firstLoad=false;
     //_currentLocation.startUpdatingLocation;
     _mapView.showsUserLocation=YES;
     
-    CLLocation *fogoDeChao=[[CLLocation alloc] initWithLatitude:39.042411 longitude:-94.589985];
-    CLLocation *IC=[[CLLocation alloc] initWithLatitude:38.943706 longitude:-94.532409];
-    CLLocation *mcdonalds=[[CLLocation alloc] initWithLatitude:38.953502 longitude:-94.525705];
-    CLLocation *johnsonHall=[[CLLocation alloc] initWithLatitude:39.036553 longitude:-94.583285];
-    
-    locationData=[NSArray arrayWithObjects:IC, mcdonalds, johnsonHall,fogoDeChao, nil];
+
     //[_mapView userTrackingMode];
 }
 
@@ -50,7 +46,7 @@ static bool firstLoad=false;
 {
     //_mapView.userLocation=YES;
     
-    
+    [self plotBathrooms];
     //_mapView.u
     
     /*CLLocationCoordinate2D zoomLocation;
@@ -158,6 +154,130 @@ static bool firstLoad=false;
     //[self.navigationController transitionFromViewController:self toViewController:@"MainViewController" duration:.5 options:(UIViewAnimationOptionTransitionFlipFromLeft) animations:nil completion:YES];
     //[self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromLeft];
     [self.navigationController popToRootViewControllerAnimated: YES];
+}
+
+
+/*
+ * Put annotations on map
+ *
+ */
+
+- (void)plotBathrooms {
+    for (id<MKAnnotation> annotation in _mapView.annotations) {
+        [_mapView removeAnnotation:annotation];
+    }
+    
+    static double mover = 0.003;
+    
+    NSNumber * latitude = [NSNumber numberWithDouble:(39.0365 + mover)];
+    NSNumber * longitude = [NSNumber numberWithDouble:(-94.58334 + mover)];
+    NSString * description = @"Johnson Hall";
+    NSString * address = @"StankRank: 7.2";
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = latitude.doubleValue;
+    coordinate.longitude = longitude.doubleValue;
+    
+    BathroomAnnotation_Test *annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+    [_mapView addAnnotation:annotation];
+    /*CLLocationCoordinate2D *fogoDeChao=[[CLLocationCoordinate2D alloc] initWithLatitude:39.042411 longitude:-94.589985];
+     CLLocationCoordinate2D *IC=[[CLLocationCoordinate2D alloc] initWithLatitude:38.943706
+     longitude:-94.532409];
+     CLLocationCoordinate2D *mcdonalds=[[CLLocationCoordinate2D alloc] initWithLatitude:38.953502
+     longitude:-94.525705];
+     CLLocationCoordinate2D *johnsonHall=[[CLLocationCoordinate2D alloc] initWithLatitude:39.036553
+     longitude:-94.583285];
+     
+     locationData=[NSArray arrayWithObjects:IC, mcdonalds, johnsonHall,fogoDeChao, nil];*/
+    
+    
+    latitude = [NSNumber numberWithDouble:(38.953502 )];
+    longitude = [NSNumber numberWithDouble:(-94.525705)];
+    description = @"McDonald's";
+    address = @"StankRank: 6.5";
+
+    coordinate.latitude = latitude.doubleValue;
+    coordinate.longitude = longitude.doubleValue;
+    
+    annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+    [_mapView addAnnotation:annotation];
+    
+    latitude = [NSNumber numberWithDouble:(38.943706 )];
+    longitude = [NSNumber numberWithDouble:(-94.532409)];
+    description = @"Cerner Innovation Campus";
+    address = @"StankRank: 9.9";
+    
+    coordinate.latitude = latitude.doubleValue;
+    coordinate.longitude = longitude.doubleValue;
+    
+    annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+    [_mapView addAnnotation:annotation];
+    
+    latitude = [NSNumber numberWithDouble:(39.042411 )];
+    longitude = [NSNumber numberWithDouble:(-94.589985)];
+    description = @"Fogo De Chao";
+    address = @"StankRank: 8.4";
+    
+    coordinate.latitude = latitude.doubleValue;
+    coordinate.longitude = longitude.doubleValue;
+    
+    annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
+    [_mapView addAnnotation:annotation];
+}
+
+
+/*
+ * Annotations and Callouts for BathroomAnnotation
+ *
+ *
+ */
+
+- (MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:(id <MKAnnotation>)annotation{
+    
+    MKAnnotationView *view = nil;
+    //MKPinAnnotationView *view=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"HotSpotsLoc"];
+    
+    if(annotation !=_mapView.userLocation){
+        //view = (MKAnnotationView *)
+        view = (MKPinAnnotationView *)
+        [_mapView dequeueReusableAnnotationViewWithIdentifier:@"identifier"];
+        if(nil == view) {
+            //view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"identifier"];
+            //view=[[MKAnnotationView alloc] init];
+            view=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"identifier"];
+            
+        }
+        
+        
+        //id <MKAnnotation> *currPlaceMark = &annotation;
+        //NSLog(@"%i",currPlaceMark.position);
+        
+        /*view.image = [UIImage imageNamed:@"pin.png"];
+         view.pinColor = MKPinAnnotationColorRed;
+         view.animatesDrop = YES;
+         view.canShowCallout = YES;*/
+        UIButton *btnViewVenue = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        view.rightCalloutAccessoryView=btnViewVenue;
+        view.enabled = YES;
+        view.canShowCallout = YES;
+        view.multipleTouchEnabled = NO;
+        
+        //view.animatesDrop = YES;
+        
+    }
+    return view;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    // here we illustrate how to detect which annotation type was clicked on for its callout
+    id <MKAnnotation> annotation = [view annotation];
+    if ([annotation isKindOfClass:[BathroomAnnotation_Test class]])
+    {
+        NSLog(@"clicked BathroomInfo");
+    }
+    
+    //[self.navigationController pushViewController:self.modalViewController animated:YES];
 }
 
 @end
