@@ -73,7 +73,7 @@ static bool firstLoad=TRUE;
     //zoomLocation.longitude = _mapView.userLocation.coordinate.longitude;
     NSLog(@"(%f,%f)",zoomLocation.latitude, zoomLocation.longitude);
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 50*METERS_PER_MILE, 50*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
     
     // 3
     [_mapView setRegion:viewRegion animated:YES];
@@ -233,7 +233,7 @@ static bool firstLoad=TRUE;
         //id <MKAnnotation> *currPlaceMark = &annotation;
         //NSLog(@"%i",currPlaceMark.position);
         
-        view.image = [UIImage imageNamed:@"1373616020_stock_toilet-paper.png"];
+        //view.image = [UIImage imageNamed:@"1373616020_stock_toilet-paper.png"];
         /* view.pinColor = MKPinAnnotationColorRed;
          view.animatesDrop = YES;
          view.canShowCallout = YES;*/
