@@ -19,6 +19,8 @@
 
 @property (nonatomic, retain) IBOutlet UIButton *listButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+@property (nonatomic, retain) NSArray *bathrooms;
+
 - (IBAction)openListView;
 - (IBAction)openMainMenu;
 @end
