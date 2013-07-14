@@ -10,7 +10,7 @@
 #import "ListViewController.h"
 #import "BathroomAnnotation_Test.h"
 #import "SelectedItemViewViewController.h"
-
+#import "Bathroom.h"
 #define METERS_PER_MILE 1609.344
 @interface MapViewController ()
 {
@@ -62,21 +62,26 @@ static bool firstLoad=TRUE;
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    
     if(firstLoad)
     {
         //self.mapView.centerCoordinate = userLocation.location.coordinate;
+        
         [self centerView];
         firstLoad=FALSE;
     }
-
 }
 
 - (void) centerView {
     //self.mapView.centerCoordinate = *(userLocation);
     CLLocationCoordinate2D zoomLocation = _mapView.userLocation.coordinate;
-    //zoomLocation.latitude = _mapView.userLocation.coordinate.latitude;
-    //zoomLocation.longitude = _mapView.userLocation.coordinate.longitude;
+
+    //if we are unable to read userLocation, let the updateUserLocation callback
+    //continue to get called
+    if ( zoomLocation.latitude == 0 &&
+      zoomLocation.longitude == 0 )
+    {
+        firstLoad = TRUE;
+    }
     NSLog(@"(%f,%f)",zoomLocation.latitude, zoomLocation.longitude);
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
@@ -135,7 +140,8 @@ static bool firstLoad=TRUE;
     for (id<MKAnnotation> annotation in _mapView.annotations) {
         [_mapView removeAnnotation:annotation];
     }
-       
+    
+   
     NSNumber * latitude = [NSNumber numberWithDouble:(39.0365 )];
     NSNumber * longitude = [NSNumber numberWithDouble:(-94.58334 )];
     NSString * description = @"Johnson Hall";
@@ -205,7 +211,6 @@ static bool firstLoad=TRUE;
             view=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"identifier"];
             
         }
-        
         
         //id <MKAnnotation> *currPlaceMark = &annotation;
         //NSLog(@"%i",currPlaceMark.position);
