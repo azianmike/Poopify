@@ -420,6 +420,54 @@
                 <relationship kind="action" name="action"/>
             </relationships>
         </class>
+        <class className="ListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="openMainMenu"/>
+                <relationship kind="action" name="openMapView"/>
+                <relationship kind="outlet" name="bathroomName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mainMenu" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doBlueButton"/>
+                <relationship kind="action" name="doGreenButton"/>
+                <relationship kind="action" name="doRedButton"/>
+                <relationship kind="action" name="openListView"/>
+                <relationship kind="action" name="openMapView"/>
+                <relationship kind="action" name="reset"/>
+                <relationship kind="outlet" name="blueButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="greenButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="redButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="resetButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="openListView"/>
+                <relationship kind="action" name="openMainMenu"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="listButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SelectedItemViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectedItemViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bathroomName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbsDownButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="thumbsDownPercent" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbsUpButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="thumbsUpPercent2" candidateClass="UILabel"/>
+            </relationships>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
