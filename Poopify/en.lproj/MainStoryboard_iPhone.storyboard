@@ -461,10 +461,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectedItemViewViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="bathroomName" candidateClass="UILabel"/>
-<<<<<<< Updated upstream
-=======
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
->>>>>>> Stashed changes
                 <relationship kind="outlet" name="thumbsDownButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="thumbsDownPercent" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="thumbsUpButton" candidateClass="UIButton"/>
