@@ -98,6 +98,7 @@
     cell.navigationController=self.navigationController;
     cell.storyboard=[self storyboard];
     cell.location=current.location;
+    cell.data=current;
     return cell;
 }
 

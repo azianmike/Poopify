@@ -28,9 +28,14 @@ static bool firstLoad;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.thumbsUpPercent2.text=_info.thumbsUpPercent.text;
+    /*self.thumbsUpPercent2.text=_info.thumbsUpPercent.text;
     self.bathroomName.text=_info.bathroomName.text;
-    self.thumbsDownPercent.text=_info.thumbsDownPercent.text;
+    self.thumbsDownPercent.text=_info.thumbsDownPercent.text;*/
+    
+    self.thumbsUpPercent2.text=_data.thumbsUpPercent.text;
+    self.bathroomName.text=_data.bathroomName.text;
+    self.thumbsDownPercent.text=_data.thumbsDownPercent.text;
+    
     [self.thumbsUpPercent2 setNeedsDisplay];
     [self.thumbsDownPercent setNeedsDisplay];
     [self.bathroomName setNeedsDisplay];
@@ -58,9 +63,9 @@ static bool firstLoad;
     self.mapView.centerCoordinate = userLocation.location.coordinate;
     CLLocationCoordinate2D zoomLocation;
     //zoomLocation.latitude = 39.281516;g
-    zoomLocation.latitude = _info.location.coordinate.latitude;
+    zoomLocation.latitude = _data.location.coordinate.latitude;
     //zoomLocation.longitude= -76.580806;
-    zoomLocation.longitude = _info.location.coordinate.longitude;
+    zoomLocation.longitude = _data.location.coordinate.longitude;
     
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);

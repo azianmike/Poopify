@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreFoundation/CoreFoundation.h>
+#import "Bathroom.h"
 #define height 70;
 
 
@@ -26,6 +27,8 @@
 @property (nonatomic, strong) UINavigationController *navigationController;
 
 @property (nonatomic, assign) CLLocation *location;
+
+@property (nonatomic, strong) Bathroom *data;
 
 -(IBAction)openSelectedItemView;
 

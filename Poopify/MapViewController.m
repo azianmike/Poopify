@@ -23,6 +23,7 @@
 NSMutableArray *bathroom2;
 static bool firstLoad=TRUE;
 @synthesize bathrooms=_bathrooms;
+UINavigationController *test;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +44,7 @@ static bool firstLoad=TRUE;
     //_currentLocation.startUpdatingLocation;
     _mapView.showsUserLocation=YES;
     
+    test=self.navigationController;
 
     //[_mapView userTrackingMode];
 }
@@ -234,10 +236,20 @@ static bool firstLoad=TRUE;
     {
         NSLog(@"clicked BathroomInfo");
     }
-    /*SelectedItemViewViewController *controller =[self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
+    SelectedItemViewViewController *controller =[self.storyboard instantiateViewControllerWithIdentifier:@"SelectedItemView"];
     TableViewCellControllerCell *passData = [[TableViewCellControllerCell alloc] init];
-    passData.bathroomName
-    [self.navigationController pushViewController:controller animated:YES];*/
+    for(int i=0; i<[_bathrooms count]; i++)
+    {
+        if([[annotation title] isEqualToString:[[[_bathrooms objectAtIndex:i] bathroomName ]text]])
+        {
+            controller.data=[_bathrooms objectAtIndex:i];
+            break;
+        }
+            
+    }
+    //passData.data=
+    //[self.navigationController pushViewController:controller animated:YES];
+    [test pushViewController:controller animated:YES];
 }
 
 @end
