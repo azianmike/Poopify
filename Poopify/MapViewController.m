@@ -10,7 +10,9 @@
 #import "ListViewController.h"
 #define METERS_PER_MILE 1609.344
 @interface MapViewController ()
-
+{
+    NSArray *locationData;
+}
 @end
 
 @implementation MapViewController
@@ -34,6 +36,13 @@ static bool firstLoad=false;
     _mapView.delegate = self;
     //_currentLocation.startUpdatingLocation;
     _mapView.showsUserLocation=YES;
+    
+    CLLocation *fogoDeChao=[[CLLocation alloc] initWithLatitude:39.042411 longitude:-94.589985];
+    CLLocation *IC=[[CLLocation alloc] initWithLatitude:38.943706 longitude:-94.532409];
+    CLLocation *mcdonalds=[[CLLocation alloc] initWithLatitude:38.953502 longitude:-94.525705];
+    CLLocation *johnsonHall=[[CLLocation alloc] initWithLatitude:39.036553 longitude:-94.583285];
+    
+    locationData=[NSArray arrayWithObjects:IC, mcdonalds, johnsonHall,fogoDeChao, nil];
     //[_mapView userTrackingMode];
 }
 
