@@ -166,11 +166,9 @@ static bool firstLoad=false;
     for (id<MKAnnotation> annotation in _mapView.annotations) {
         [_mapView removeAnnotation:annotation];
     }
-    
-    static double mover = 0.003;
-    
-    NSNumber * latitude = [NSNumber numberWithDouble:(39.0365 + mover)];
-    NSNumber * longitude = [NSNumber numberWithDouble:(-94.58334 + mover)];
+       
+    NSNumber * latitude = [NSNumber numberWithDouble:(39.0365 )];
+    NSNumber * longitude = [NSNumber numberWithDouble:(-94.58334 )];
     NSString * description = @"Johnson Hall";
     NSString * address = @"StankRank: 7.2";
     
@@ -180,15 +178,6 @@ static bool firstLoad=false;
     
     BathroomAnnotation_Test *annotation = [[BathroomAnnotation_Test alloc] initWithName:description address:address coordinate:coordinate] ;
     [_mapView addAnnotation:annotation];
-    /*CLLocationCoordinate2D *fogoDeChao=[[CLLocationCoordinate2D alloc] initWithLatitude:39.042411 longitude:-94.589985];
-     CLLocationCoordinate2D *IC=[[CLLocationCoordinate2D alloc] initWithLatitude:38.943706
-     longitude:-94.532409];
-     CLLocationCoordinate2D *mcdonalds=[[CLLocationCoordinate2D alloc] initWithLatitude:38.953502
-     longitude:-94.525705];
-     CLLocationCoordinate2D *johnsonHall=[[CLLocationCoordinate2D alloc] initWithLatitude:39.036553
-     longitude:-94.583285];
-     
-     locationData=[NSArray arrayWithObjects:IC, mcdonalds, johnsonHall,fogoDeChao, nil];*/
     
     
     latitude = [NSNumber numberWithDouble:(38.953502 )];
@@ -252,8 +241,8 @@ static bool firstLoad=false;
         //id <MKAnnotation> *currPlaceMark = &annotation;
         //NSLog(@"%i",currPlaceMark.position);
         
-        /*view.image = [UIImage imageNamed:@"pin.png"];
-         view.pinColor = MKPinAnnotationColorRed;
+        view.image = [UIImage imageNamed:@"1373616020_stock_toilet-paper.png"];
+        /* view.pinColor = MKPinAnnotationColorRed;
          view.animatesDrop = YES;
          view.canShowCallout = YES;*/
         UIButton *btnViewVenue = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
