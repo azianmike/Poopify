@@ -10,6 +10,8 @@
 #import "ListViewController.h"
 #import "TableViewCellControllerCell.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Bathroom.h"
+#import "MapViewController.h"
 @interface ListViewController ()
 
 @end
@@ -20,6 +22,7 @@
     NSArray *locationData;
 }
 
+@synthesize bathrooms;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -61,7 +64,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    int thumbsUpNumber=arc4random()%100;
+    /*int thumbsUpNumber=arc4random()%100;
     int thumbsDownNumber=100-thumbsUpNumber;
     //randomNumber=0+randomNumber%(100);
     cell.bathroomName.text = [tableData objectAtIndex:indexPath.row];
@@ -85,7 +88,16 @@
         toiletCount=1;
     else
         toiletCount=0;
-    
+    */
+    Bathroom *current=((Bathroom *)[bathrooms objectAtIndex:indexPath.row]);
+    cell.bathroomName.text=current.bathroomName.text;
+    cell.thumbsDownPercent.text=current.thumbsDownPercent.text;
+    cell.thumbsUpPercent.text=current.thumbsUpPercent.text;
+    cell.dollarImage=current.dollarImage;
+    cell.toiletImage=current.toiletImage;
+    cell.navigationController=self.navigationController;
+    cell.storyboard=[self storyboard];
+    cell.location=current.location;
     return cell;
 }
 
@@ -112,7 +124,10 @@
     //oView.title = @"The Other View";
     //[self.navigationController pushViewController:oView animated:YES];
     
-    [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    MapViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    controller.bathrooms=bathrooms;
+    //[self.storyboard instantiateViewControllerWithIdentifier:controller];
+    [self.navigationController pushViewController:controller animated:YES];
     
 }
 

@@ -8,29 +8,29 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Poopify/MainViewController.m"
-         timestampString = "395192127.690712"
+         timestampString = "395470269.672426"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "102"
-         endingLineNumber = "102"
+         startingLineNumber = "163"
+         endingLineNumber = "163"
          landmarkName = "-openMapView"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Poopify/TableViewCellControllerCell.m"
-         timestampString = "395378072.007193"
+         timestampString = "395474474.519783"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
          landmarkName = "-openSelectedItemView"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Poopify/SelectedItemViewViewController.m"
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Poopify/ListViewController.m"
-         timestampString = "395459224.517747"
+         timestampString = "395471529.621315"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,37 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Poopify/ListViewController.m"
-         timestampString = "395458199.024717"
+         timestampString = "395471529.621315"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "-tableView:cellForRowAtIndexPath:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Poopify/MapViewController.m"
-         timestampString = "395455153.71361"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "-viewWillAppear:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Poopify/ListViewController.m"
-         timestampString = "395459224.517747"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>

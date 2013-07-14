@@ -21,6 +21,11 @@
 
 -(id)init
 {
+    _bathroomName=[[UILabel alloc] init];
+    _thumbsDownPercent=[[UILabel alloc] init];
+    _thumbsUpPercent=[[UILabel alloc] init];
+    _dollarImage=[[UIImageView alloc] init];
+    _toiletImage=[[UIImageView alloc] init];
     return self;
 }
 

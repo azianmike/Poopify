@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "ListViewController.h"
+
 #define METERS_PER_MILE 1609.344
 @interface MapViewController ()
 {
@@ -16,8 +17,9 @@
 @end
 
 @implementation MapViewController
+NSMutableArray *bathroom2;
 static bool firstLoad=false;
-
+@synthesize bathrooms=_bathrooms;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -51,21 +53,6 @@ static bool firstLoad=false;
     //_mapView.userLocation=YES;
     
     
-    //_mapView.u
-    
-    /*CLLocationCoordinate2D zoomLocation;
-    //zoomLocation.latitude = 39.281516;g
-    zoomLocation.latitude = _currentLocation.location.coordinate.latitude;
-    //zoomLocation.longitude= -76.580806;
-    zoomLocation.longitude = _currentLocation.location.coordinate.longitude;
-    
-    // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-    
-    // 3
-    [_mapView setRegion:viewRegion animated:NO];
-    [_mapView regionThatFits:viewRegion];
-    [_mapView setCenterCoordinate:zoomLocation animated:NO];*/
     firstLoad=FALSE;
     //[_mapView setUserTrackingMode:MKUserTrackingModeNone];
 }
@@ -113,52 +100,22 @@ static bool firstLoad=false;
     //oView.title = @"The Other View";
     //[self.navigationController pushViewController:oView animated:YES];
     
-    [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    //[self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    ListViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    controller.bathrooms=_bathrooms;
     
-    
-}
-
--(void)setUpView{
-    view1 = [[UIView alloc]initWithFrame:self.view.frame];
-    view1.backgroundColor = [UIColor lightTextColor];
-    view2 = [[UIView alloc]initWithFrame:self.view.frame];
-    view2.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:view1];
-    [self.view sendSubviewToBack:view1];
+    //[self.storyboard instantiateViewControllerWithIdentifier:controller];
+    [self.navigationController pushViewController:controller animated:YES];
     
 }
 
--(void)doTransitionWithType:(UIViewAnimationOptions)animationTransitionType{
-    if ([[self.view subviews] containsObject:view2 ]) {
-        [UIView transitionFromView:view2
-                            toView:view1
-                          duration:2
-                           options:animationTransitionType
-                        completion:^(BOOL finished){
-                            [view2 removeFromSuperview];
-                        }];
-        [self.view addSubview:view1];
-        [self.view sendSubviewToBack:view1];
-    }
-    else{
-        
-        [UIView transitionFromView:view1
-                            toView:view2
-                          duration:2
-                           options:animationTransitionType
-                        completion:^(BOOL finished){
-                            [view1 removeFromSuperview];
-                        }];
-        [self.view addSubview:view2];
-        [self.view sendSubviewToBack:view2];
-        
-    }
-}
 
 - (IBAction)openMainMenu {
     //[self.navigationController transitionFromViewController:self toViewController:@"MainViewController" duration:.5 options:(UIViewAnimationOptionTransitionFlipFromLeft) animations:nil completion:YES];
     //[self doTransitionWithType:UIViewAnimationOptionTransitionFlipFromLeft];
-    [self.navigationController popToRootViewControllerAnimated: YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    //[self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

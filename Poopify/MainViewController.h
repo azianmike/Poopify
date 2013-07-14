@@ -18,7 +18,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *greenButton;
 @property (nonatomic, retain) IBOutlet UIButton *blueButton;
 @property (nonatomic, retain) IBOutlet UIButton *resetButton;
-@property (nonatomic, retain) NSArray *bathrooms;
+@property (nonatomic, retain) NSMutableArray *bathrooms;
 
 - (IBAction)openMapView;
 - (IBAction)openListView;

@@ -9,7 +9,7 @@
 #import "TableViewCellControllerCell.h"
 #import "SelectedItemViewViewController.h"
 @implementation TableViewCellControllerCell
-@synthesize bathroomName = _bathroomName;
+//@synthesize bathroomName = _bathroomName;
 @synthesize thumbsUpPercent = _thumbsUpPercent;
 @synthesize thumbsDownPercent = _thumbsDownPercent;
 @synthesize dollarImage = _dollarImage;
@@ -18,6 +18,7 @@
 @synthesize storyboard=_storyboard;
 @synthesize view=_view;
 @synthesize navigationController;
+@synthesize location=_location;
 //@synthesize tableView=_tableView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
