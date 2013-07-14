@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TableViewCellControllerCell.h"
-
+#import <CoreLocation/CoreLocation.h>
 @interface ListViewController : UIViewController<UITableViewDataSource, UITableViewDataSource>
 {
     UIView *view1;

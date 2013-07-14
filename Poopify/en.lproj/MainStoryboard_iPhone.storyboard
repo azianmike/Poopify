@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Main View Controller - Poopify Me Captain-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="MainViewController" sceneMemberID="viewController">
@@ -155,7 +155,7 @@
                             <constraint firstAttribute="bottom" secondItem="h4Q-tU-NGU" secondAttribute="bottom" constant="60" id="taN-75-z0n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BRw-yq-waO"/>
+                    <navigationItem key="navigationItem" title="Poopify Me Captain" id="BRw-yq-waO"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="blueButton" destination="Aa0-hX-exe" id="IeU-Sh-oh5"/>
@@ -420,55 +420,6 @@
                 <relationship kind="action" name="action"/>
             </relationships>
         </class>
-        <class className="ListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="openMainMenu"/>
-                <relationship kind="action" name="openMapView"/>
-                <relationship kind="outlet" name="bathroomName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mainMenu" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doBlueButton"/>
-                <relationship kind="action" name="doGreenButton"/>
-                <relationship kind="action" name="doRedButton"/>
-                <relationship kind="action" name="openListView"/>
-                <relationship kind="action" name="openMapView"/>
-                <relationship kind="action" name="reset"/>
-                <relationship kind="outlet" name="blueButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="greenButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="redButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="resetButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="openListView"/>
-                <relationship kind="action" name="openMainMenu"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="listButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SelectedItemViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectedItemViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bathroomName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="thumbsDownButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="thumbsDownPercent" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="thumbsUpButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="thumbsUpPercent" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="thumbsUpPercent2" candidateClass="UILabel"/>
-            </relationships>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -476,7 +427,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ltX-zn-tos"/>
-        <segue reference="Md0-U0-G0r"/>
+        <segue reference="47P-q7-VvY"/>
+        <segue reference="lMW-b0-vyE"/>
     </inferredMetricsTieBreakers>
 </document>

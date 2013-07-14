@@ -5,10 +5,11 @@
 //  Created by Michael Luo on 7/9/13.
 //  Copyright (c) 2013 Michael Luo. All rights reserved.
 //
-
+#include <stdlib.h>
 #import <UIKit/UIKit.h>
 #import "ListViewController.h"
 #import "TableViewCellControllerCell.h"
+#import <CoreLocation/CoreLocation.h>
 @interface ListViewController ()
 
 @end
@@ -16,6 +17,7 @@
 @implementation ListViewController
 {
     NSArray *tableData;
+    NSArray *locationData;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,7 +34,13 @@
     //[self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewDidLoad];
     [self setUpView];
-    tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    tableData = [NSArray arrayWithObjects:@"Innovations Campus", @"McDonalds", @"Johnson Hall", @"Fogo De Chao", nil];
+    CLLocation *fogoDeChao=[[CLLocation alloc] initWithLatitude:39.042411 longitude:-94.589985];
+    CLLocation *IC=[[CLLocation alloc] initWithLatitude:38.943706 longitude:-94.532409];
+    CLLocation *mcdonalds=[[CLLocation alloc] initWithLatitude:38.953502 longitude:-94.525705];
+    CLLocation *johnsonHall=[[CLLocation alloc] initWithLatitude:39.036553 longitude:-94.583285];
+    
+    locationData=[NSArray arrayWithObjects:IC, mcdonalds, johnsonHall,fogoDeChao, nil];
 	// Do any additional setup after loading the view.
 
 }
@@ -53,11 +61,30 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
+    int thumbsUpNumber=arc4random()%100;
+    int thumbsDownNumber=100-thumbsUpNumber;
+    //randomNumber=0+randomNumber%(100);
     cell.bathroomName.text = [tableData objectAtIndex:indexPath.row];
     cell.storyboard=[self storyboard];
     cell.view = [self view];
+    NSString *thumbsUpLabel=[NSString stringWithFormat:@"%d%%", thumbsUpNumber];
+    NSString *thumbsDownLabel=[NSString stringWithFormat:@"%d%%", thumbsDownNumber];
+    cell.thumbsUpPercent.text=thumbsUpLabel;
+    cell.thumbsDownPercent.text=thumbsDownLabel;
     cell.navigationController=self.navigationController;
+    static int dollarCount=0;
+    static int toiletCount=1;
+    cell.dollarImage.alpha=dollarCount;
+    cell.toiletImage.alpha=toiletCount;
+    if(dollarCount==0)
+        dollarCount=1;
+    else
+        dollarCount=0;
+    if(toiletCount==0)
+        toiletCount=1;
+    else
+        toiletCount=0;
+    
     return cell;
 }
 

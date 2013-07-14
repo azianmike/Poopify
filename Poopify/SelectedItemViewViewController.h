@@ -19,4 +19,5 @@
 @property (nonatomic, assign) IBOutlet UIButton *thumbsUpButton;
 @property (nonatomic, assign) IBOutlet UIButton *thumbsDownButton;
 
+
 @end

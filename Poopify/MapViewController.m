@@ -14,7 +14,7 @@
 @end
 
 @implementation MapViewController
-
+static bool firstLoad=false;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,11 +57,12 @@
     [_mapView setRegion:viewRegion animated:NO];
     [_mapView regionThatFits:viewRegion];
     [_mapView setCenterCoordinate:zoomLocation animated:NO];*/
+    firstLoad=FALSE;
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    static bool firstLoad=false;
+    
     if(firstLoad==TRUE)
     {
         //self.mapView.centerCoordinate = userLocation.location.coordinate;
@@ -81,12 +82,12 @@
     [_mapView setRegion:viewRegion animated:YES];
     [_mapView regionThatFits:viewRegion];
     [_mapView setCenterCoordinate:zoomLocation animated:YES];
-    firstLoad=true;
+    firstLoad=TRUE;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    
+    firstLoad=FALSE;
 }
 
 - (void)didReceiveMemoryWarning

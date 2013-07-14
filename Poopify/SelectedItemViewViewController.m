@@ -29,7 +29,9 @@
 	// Do any additional setup after loading the view.
     self.thumbsUpPercent2.text=_info.thumbsUpPercent.text;
     self.bathroomName.text=_info.bathroomName.text;
+    self.thumbsDownPercent.text=_info.thumbsDownPercent.text;
     [self.thumbsUpPercent2 setNeedsDisplay];
+    [self.thumbsDownPercent setNeedsDisplay];
     [self.bathroomName setNeedsDisplay];
 }
 

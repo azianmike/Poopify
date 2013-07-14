@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MapKit/MapKit.h>
+#import <CoreFoundation/CoreFoundation.h>
 #define height 70;
 
 
@@ -23,7 +24,8 @@
 @property (nonatomic, weak) IBOutlet UIStoryboard *storyboard;
 @property (nonatomic, strong) UIView *view;
 @property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, assign) id delegate;
+
+@property (nonatomic, assign) CLLocation *location;
 
 -(IBAction)openSelectedItemView;
 

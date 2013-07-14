@@ -26,6 +26,11 @@
 		C1278438178BB8B2009FE27E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1278436178BB8B2009FE27E /* InfoPlist.strings */; };
 		C127843B178BB8B2009FE27E /* PoopifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C127843A178BB8B2009FE27E /* PoopifyTests.m */; };
 		C1278445178BC53E009FE27E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1278444178BC53E009FE27E /* MapKit.framework */; };
+		C16B98DF1792285A003BF2AF /* apple-touch-icon-iphone (1).png in Resources */ = {isa = PBXBuildFile; fileRef = C16B98DE1792285A003BF2AF /* apple-touch-icon-iphone (1).png */; };
+		C16B98E117922892003BF2AF /* apple-touch-icon-iphone (1).png in Resources */ = {isa = PBXBuildFile; fileRef = C16B98E017922892003BF2AF /* apple-touch-icon-iphone (1).png */; };
+		C16B98E41792330B003BF2AF /* Bathroom.m in Sources */ = {isa = PBXBuildFile; fileRef = C16B98E31792330B003BF2AF /* Bathroom.m */; };
+		C16B98E61792364C003BF2AF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B98E51792364C003BF2AF /* CoreFoundation.framework */; };
+		C16B98E817923683003BF2AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B98E717923683003BF2AF /* CoreLocation.framework */; };
 		C175D51E1790F54E0069B766 /* SelectedItemViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C175D51D1790F54E0069B766 /* SelectedItemViewViewController.m */; };
 		C175D5201791E28B0069B766 /* toilet-paper-icon-400x300.png in Resources */ = {isa = PBXBuildFile; fileRef = C175D51F1791E28A0069B766 /* toilet-paper-icon-400x300.png */; };
 		C175D5231791E4A70069B766 /* apple-touch-icon-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C175D5211791E4A60069B766 /* apple-touch-icon-iphone.png */; };
@@ -81,6 +86,12 @@
 		C1278439178BB8B2009FE27E /* PoopifyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoopifyTests.h; sourceTree = "<group>"; };
 		C127843A178BB8B2009FE27E /* PoopifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoopifyTests.m; sourceTree = "<group>"; };
 		C1278444178BC53E009FE27E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C16B98DE1792285A003BF2AF /* apple-touch-icon-iphone (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-iphone (1).png"; sourceTree = "<group>"; };
+		C16B98E017922892003BF2AF /* apple-touch-icon-iphone (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-iphone (1).png"; sourceTree = "<group>"; };
+		C16B98E21792330B003BF2AF /* Bathroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bathroom.h; sourceTree = "<group>"; };
+		C16B98E31792330B003BF2AF /* Bathroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bathroom.m; sourceTree = "<group>"; };
+		C16B98E51792364C003BF2AF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		C16B98E717923683003BF2AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C175D51C1790F54E0069B766 /* SelectedItemViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedItemViewViewController.h; sourceTree = "<group>"; };
 		C175D51D1790F54E0069B766 /* SelectedItemViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedItemViewViewController.m; sourceTree = "<group>"; };
 		C175D51F1791E28A0069B766 /* toilet-paper-icon-400x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toilet-paper-icon-400x300.png"; sourceTree = "<group>"; };
@@ -108,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16B98E817923683003BF2AF /* CoreLocation.framework in Frameworks */,
+				C16B98E61792364C003BF2AF /* CoreFoundation.framework in Frameworks */,
 				C1278445178BC53E009FE27E /* MapKit.framework in Frameworks */,
 				C1278404178BB8B1009FE27E /* UIKit.framework in Frameworks */,
 				C1278406178BB8B2009FE27E /* Foundation.framework in Frameworks */,
@@ -131,6 +144,9 @@
 		C12783F7178BB8B1009FE27E = {
 			isa = PBXGroup;
 			children = (
+				C16B98E717923683003BF2AF /* CoreLocation.framework */,
+				C16B98E51792364C003BF2AF /* CoreFoundation.framework */,
+				C16B98E017922892003BF2AF /* apple-touch-icon-iphone (1).png */,
 				C175D5271791E4C20069B766 /* apple-touch-icon-iphone4.png */,
 				C175D5251791E4BA0069B766 /* apple-touch-icon-iphone.png */,
 				C1278444178BC53E009FE27E /* MapKit.framework */,
@@ -164,6 +180,7 @@
 		C1278409178BB8B2009FE27E /* Poopify */ = {
 			isa = PBXGroup;
 			children = (
+				C16B98DE1792285A003BF2AF /* apple-touch-icon-iphone (1).png */,
 				C175D5211791E4A60069B766 /* apple-touch-icon-iphone.png */,
 				C175D5221791E4A60069B766 /* apple-touch-icon-iphone4.png */,
 				C175D51F1791E28A0069B766 /* toilet-paper-icon-400x300.png */,
@@ -222,6 +239,8 @@
 		C130D359178E15B8009A61CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C16B98E21792330B003BF2AF /* Bathroom.h */,
+				C16B98E31792330B003BF2AF /* Bathroom.m */,
 				C1FE6DA0178D0C9F0043724A /* MapViewController.h */,
 				C1FE6DA1178D0C9F0043724A /* MapViewController.m */,
 				C1278424178BB8B2009FE27E /* FlipsideViewController.h */,
@@ -325,6 +344,8 @@
 				C175D5241791E4A70069B766 /* apple-touch-icon-iphone4.png in Resources */,
 				C175D5261791E4BA0069B766 /* apple-touch-icon-iphone.png in Resources */,
 				C175D5281791E4C20069B766 /* apple-touch-icon-iphone4.png in Resources */,
+				C16B98DF1792285A003BF2AF /* apple-touch-icon-iphone (1).png in Resources */,
+				C16B98E117922892003BF2AF /* apple-touch-icon-iphone (1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +388,7 @@
 				C10ED719178D17A100C7D55F /* ListViewController.m in Sources */,
 				C1E21B83178FA97700AD035D /* TableViewCellControllerCell.m in Sources */,
 				C175D51E1790F54E0069B766 /* SelectedItemViewViewController.m in Sources */,
+				C16B98E41792330B003BF2AF /* Bathroom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
