@@ -38,6 +38,7 @@
 		C175D5241791E4A70069B766 /* apple-touch-icon-iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = C175D5221791E4A60069B766 /* apple-touch-icon-iphone4.png */; };
 		C175D5261791E4BA0069B766 /* apple-touch-icon-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C175D5251791E4BA0069B766 /* apple-touch-icon-iphone.png */; };
 		C175D5281791E4C20069B766 /* apple-touch-icon-iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = C175D5271791E4C20069B766 /* apple-touch-icon-iphone4.png */; };
+		C18A183317938FFE0075167C /* fells_loop.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C18A183217938FFD0075167C /* fells_loop.gpx */; };
 		C1E21B79178F5B7B00AD035D /* thumb_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B77178F5B7B00AD035D /* thumb_down.png */; };
 		C1E21B7A178F5B7B00AD035D /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B78178F5B7B00AD035D /* thumb_up.png */; };
 		C1E21B7C178F5ECC00AD035D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1E21B7B178F5ECC00AD035D /* TableViewCell.xib */; };
@@ -102,6 +103,7 @@
 		C175D5221791E4A60069B766 /* apple-touch-icon-iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-iphone4.png"; sourceTree = "<group>"; };
 		C175D5251791E4BA0069B766 /* apple-touch-icon-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-iphone.png"; sourceTree = "<group>"; };
 		C175D5271791E4C20069B766 /* apple-touch-icon-iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-iphone4.png"; sourceTree = "<group>"; };
+		C18A183217938FFD0075167C /* fells_loop.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fells_loop.gpx; sourceTree = "<group>"; };
 		C1E21B77178F5B7B00AD035D /* thumb_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_down.png; sourceTree = "<group>"; };
 		C1E21B78178F5B7B00AD035D /* thumb_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_up.png; sourceTree = "<group>"; };
 		C1E21B7B178F5ECC00AD035D /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		C1278409178BB8B2009FE27E /* Poopify */ = {
 			isa = PBXGroup;
 			children = (
+				C18A183217938FFD0075167C /* fells_loop.gpx */,
 				C175D5211791E4A60069B766 /* apple-touch-icon-iphone.png */,
 				C175D5221791E4A60069B766 /* apple-touch-icon-iphone4.png */,
 				C175D51F1791E28A0069B766 /* toilet-paper-icon-400x300.png */,
@@ -351,6 +354,7 @@
 				C175D5261791E4BA0069B766 /* apple-touch-icon-iphone.png in Resources */,
 				C175D5281791E4C20069B766 /* apple-touch-icon-iphone4.png in Resources */,
 				C16B98E117922892003BF2AF /* apple-touch-icon-iphone (1).png in Resources */,
+				C18A183317938FFE0075167C /* fells_loop.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
