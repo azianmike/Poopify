@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Poopify/SelectedItemViewViewController.m"
-         timestampString = "395527314.304397"
+         timestampString = "395528609.396659"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
+         startingLineNumber = "132"
+         endingLineNumber = "132"
          landmarkName = "-thumbsDownButtonPressed"
          landmarkType = "5">
       </FileBreakpoint>

@@ -97,6 +97,7 @@ static bool firstLoad;
         percentValue++;
         NSString *newValue = [NSString stringWithFormat:@"%d%%", percentValue];
         _thumbsUpPercent2.text=newValue;
+        _data.thumbsUpPercent.text=newValue;
         
         percent = _thumbsDownPercent.text;
         [percent substringToIndex:([percent length]-1)];
@@ -104,6 +105,7 @@ static bool firstLoad;
         percentValue--;
         newValue = [NSString stringWithFormat:@"%d%%", percentValue];
         _thumbsDownPercent.text=newValue;
+        _data.thumbsDownPercent.text=newValue;
         [_data setVoted];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voted"
@@ -133,6 +135,7 @@ static bool firstLoad;
         percentValue--;
         NSString *newValue = [NSString stringWithFormat:@"%d%%", percentValue];
         _thumbsUpPercent2.text=newValue;
+        _data.thumbsUpPercent.text=newValue;
         
         percent = _thumbsDownPercent.text;
         [percent substringToIndex:([percent length]-1)];
@@ -140,6 +143,7 @@ static bool firstLoad;
         percentValue++;
         newValue = [NSString stringWithFormat:@"%d%%", percentValue];
         _thumbsDownPercent.text=newValue;
+        _data.thumbsDownPercent.text=newValue;
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voted"
                                                         message:@"You think this bathroom IS super crappy!"
